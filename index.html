@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthikeyan | AAA Game Designer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --primary: #00f7ff;
+    --bg: #0b0f14;
+    --card: rgba(255,255,255,0.05);
+    --border: rgba(255,255,255,0.1);
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #111827, #020617);
+    color:#fff;
+    overflow-x:hidden;
+}
+
+.container {
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+section {
+    padding:100px 0;
+}
+
+h2 {
+    text-align:center;
+    font-size:34px;
+    margin-bottom:60px;
+}
+
+h2::after {
+    content:"";
+    width:80px;
+    height:4px;
+    background:var(--primary);
+    display:block;
+    margin:15px auto 0;
+}
+
+/* NAV */
+nav {
+    position:fixed;
+    width:100%;
+    backdrop-filter:blur(12px);
+    background:rgba(0,0,0,0.6);
+    border-bottom:1px solid var(--border);
+    z-index:100;
+}
+
+nav .container {
+    display:flex;
+    justify-content:space-between;
+    padding:18px 0;
+}
+
+nav h1 {
+    color:var(--primary);
+}
+
+nav ul {
+    display:flex;
+    gap:30px;
+    list-style:none;
+}
+
+nav a {
+    color:#ccc;
+    text-decoration:none;
+}
+
+nav a:hover {
+    color:var(--primary);
+}
+
+/* HERO */
+.hero {
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+}
+
+.hero h2 {
+    font-size:48px;
+}
+
+.hero span {
+    color:var(--primary);
+}
+
+.hero p {
+    margin-top:15px;
+    color:#b8c0cc;
+}
+
+.hero button {
+    margin-top:30px;
+    padding:14px 36px;
+    background:linear-gradient(135deg,#00f7ff,#00c6ff);
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+/* PROJECT CARDS */
+.projects {
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.project {
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    overflow:hidden;
+    transition:0.4s;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+.project img {
+    width:100%;
+    height:220px;
+    object-fit:cover;
+    transition:0.4s;
+}
+
+.project-content {
+    padding:20px;
+}
+
+.project:hover img {
+    transform:scale(1.1);
+}
+
+.project:hover {
+    transform:translateY(-10px);
+    border-color:var(--primary);
+}
+
+.project h3 {
+    color:var(--primary);
+}
+
+/* PLAYABLE SECTION */
+.playable iframe {
+    width:100%;
+    height:500px;
+    border:none;
+    border-radius:18px;
+    box-shadow:0 0 25px rgba(0,247,255,0.2);
+}
+
+/* CONTACT */
+.contact {
+    text-align:center;
+}
+
+footer {
+    text-align:center;
+    padding:30px 0;
+    border-top:1px solid var(--border);
+    color:#7b8794;
+}
+
+/* SCROLL ANIMATION ACTIVE */
+.show {
+    opacity:1;
+    transform:translateY(0);
+    transition:1s ease;
+}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+    nav ul{display:none;}
+    .hero h2{font-size:34px;}
+    .playable iframe{height:300px;}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="container">
+        <h1>Karthikeyan</h1>
+        <ul>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#playable">Playable</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="container">
+        <h2>AAA <span>Game Designer</span> & Unity Developer</h2>
+        <p>Designing immersive gameplay systems & cinematic experiences.</p>
+        <button onclick="location.href='#projects'">Explore Projects</button>
+    </div>
+</section>
+
+<section id="projects">
+    <div class="container">
+        <h2>Featured Projects</h2>
+        <div class="projects">
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?random=1">
+                <div class="project-content">
+                    <h3>BioCop</h3>
+                    <p>3D third-person mech action game with AI systems and cinematic storytelling.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?random=2">
+                <div class="project-content">
+                    <h3>Alchemy’s Mystery</h3>
+                    <p>Atmospheric puzzle game focused on logic and narrative exploration.</p>
+                </div>
+            </div>
+
+            <div class="project">
+                <img src="https://picsum.photos/600/400?random=3">
+                <div class="project-content">
+                    <h3>Zombie Survival</h3>
+                    <p>Combat survival game ending in a cinematic dropship escape.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section id="playable" class="playable">
+    <div class="container">
+        <h2>Playable Demo</h2>
+
+        <!-- Replace this iframe src with your itch.io embed link -->
+        <iframe src="https://itch.io/embed-upload/YOUR_GAME_ID?color=00f7ff"></iframe>
+
+    </div>
+</section>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact</h2>
+        <p>Email: yourmail@gmail.com</p>
+        <p>GitHub | LinkedIn</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Karthikeyan — AAA Interactive Portfolio
+</footer>
+
+<script>
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+document.querySelectorAll(".project").forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>
